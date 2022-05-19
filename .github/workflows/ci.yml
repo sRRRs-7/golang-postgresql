@@ -45,6 +45,12 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-go-
 
+    - name: Intall golang-migrate
+      run: |
+        curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate.darwin-amd64.tar.gz | tar xvz
+        sudo mv migrate.darwin-amd64 /user/bin/
+        which migrate
+
     - name: Run migrations
       run: make migrateup
 
