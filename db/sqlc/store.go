@@ -39,7 +39,7 @@ func (s *Store) execTx(ctx context.Context, fn func(*Queries) error) error {
 	return tx.Commit()
 }
 
-// TransferTxParams contains the input parameters of the transder transaction
+// TransferTxParams contains the input parameters of the transfer transaction
 type TransferTxParams struct {
 	FromAccountID int64 `json:"from_account_id"`
 	ToAccountID   int64 `json:"to_account_id"`
